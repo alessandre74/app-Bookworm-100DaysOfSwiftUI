@@ -78,7 +78,9 @@ struct AddBookView: View {
                 Text("Required fields!")
             }
         }
+        .preferredColorScheme(.dark)
     }
+    
 }
 
 struct AddBookView_Previews: PreviewProvider {

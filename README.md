@@ -11,7 +11,14 @@
 ## 💻 Projeto
 
 Projeto do curso 100 Days of SwiftUI - Bookworm , app para rastrear quais livros
-lemos e o que achamos deles.
+lemos e o que achamos deles. Depois da conclusão do projeto, foi proposto 3 desafios:
+
+1 - Validar todos os campos como obrigatórios.
+
+2 - Livros com 1 estrela, o título seja destacado em vermelho.
+
+3 - Adicionar um novo atributo "date" na entidade Book, onde será salvo a data e
+hora atual, exibindo a data formatada na tela de DetailView.
 
 ## 🚀 Tecnologias utilizadas
 

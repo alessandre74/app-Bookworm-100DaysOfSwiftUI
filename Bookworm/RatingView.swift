@@ -34,6 +34,7 @@ struct RatingView: View {
                     }
             }
         }
+        .preferredColorScheme(.dark)
     }
 
     func image(for number: Int) -> Image {

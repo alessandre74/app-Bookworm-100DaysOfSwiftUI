@@ -32,6 +32,7 @@ class DataController: ObservableObject {
         book.rating = Int16(4)
         book.genre = "Mystery"
         book.review = "Description Mystery"
+        book.date = Date.now
         return book
     }
 
@@ -43,6 +44,7 @@ class DataController: ObservableObject {
         book.rating = books["rating"] as! Int16
         book.genre = books["genre"] as? String
         book.review = books["review"] as? String
+        book.date = Date.now
 
         try? moc.save()
         dismiss()
@@ -60,6 +62,10 @@ class DataController: ObservableObject {
         moc.delete(book)
         try? moc.save()
         dismiss()
+    }
+
+    static func formattedDate(date: Date) -> String {
+        return date.formatted(date: .complete, time: .shortened)
     }
 }
 

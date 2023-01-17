@@ -23,14 +23,26 @@ struct DetailView: View {
                     .resizable()
                     .scaledToFit()
 
-                Text(book.genre?.uppercased() ?? "FANTASY")
-                    .font(.caption)
-                    .fontWeight(.black)
-                    .padding(8)
-                    .foregroundColor(.white)
-                    .background(.black.opacity(0.75))
-                    .clipShape(Capsule())
-                    .offset(x: -5, y: -5)
+                HStack {
+                    Text("\(DataController.formattedDate(date: book.date ?? Date.now))")
+                        .font(.caption)
+                        .fontWeight(.black)
+                        .padding(8)
+                        .foregroundColor(.white)
+                        .background(.black.opacity(0.75))
+                        .clipShape(Capsule()).offset(x: 5, y: -5)
+
+                    Spacer()
+
+                    Text(book.genre?.uppercased() ?? "FANTASY")
+                        .font(.caption)
+                        .fontWeight(.black)
+                        .padding(8)
+                        .foregroundColor(.white)
+                        .background(.black.opacity(0.75))
+                        .clipShape(Capsule())
+                        .offset(x: -5, y: -5)
+                }
             }
 
             Text(book.author ?? "Unknown Book")
@@ -60,20 +72,11 @@ struct DetailView: View {
                 Label("Delete this book", systemImage: "trash")
             }
         }
+        .preferredColorScheme(.dark)
     }
 }
 
 struct DetailView_Previews: PreviewProvider {
-    static let books = [
-        [
-            "title": "Book Mystery",
-            "author": "Author Mystery",
-            "rating": Int16(4),
-            "genre": "Mystery",
-            "review": "Description Mystery",
-        ],
-    ]
-
     static var previews: some View {
         let dataController = DataController()
 
